@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    
+}
+
+body.dark{
+    background-color: #292c35;
+}
+
+.Switch__lable {
+    background-color: #b5c711;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid #bbb;
+    box-shadow: inset 9px 9px 18px #fff, inset -9px -9px 18px #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.Switch__lable::before {
+    content: '\263c';
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(255, 255, 255,0.158);
+    backdrop-filter: blur(5px);
+    display: block;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3rem;
+    transform: translateX(-5%);
+    transition: .3s ease;
+}
+
+.Switch__input:checked ~ .Switch__lable{
+    background-color: #001b53;
+    align-items: flex-end;
+
+}
+
+
+.Switch__input:checked ~ .Switch__lable::before{
+    content: '\263e';
+    background-color: rgba(0, 0, 0, 0.233);
+    color: #fff;
+    transform: translateX(5%);
+}
+.Switch__input{
+    display: none;
+}
+    
